@@ -1,0 +1,83 @@
+*{
+  margin: 0;
+  padding: 0;
+
+}
+
+.Navbar {
+  background-color: #282c34;
+  color: white;
+  padding: 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 2px 3px 5px black;
+}
+
+.search {
+  padding: 0.5rem;
+  font-size: 1.5vw;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  margin-right: 6vw;
+  width: 40vw;
+  height: 1vw;
+  box-shadow: 2px 3px 5px rgb(156, 155, 155);
+}
+
+.register {
+  color: white;
+  text-decoration: none;
+  padding: 0.5rem 1rem;
+  background-color: #1ba3c8;
+  border-radius: 5px;
+}
+.register:hover{
+  background-color: rgb(49, 192, 109);
+}
+
+.book-list {
+  list-style-type: none;
+  padding: 59px;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  gap: 7vw;
+  background-color: #bfc0c3;
+}
+
+.book-container {
+  border: 3px solid #7b7b7b;
+  border-radius: 5px;
+  margin: 16px;
+  padding: 10px;
+  display: flex;
+  flex-wrap: wrap;
+  background-color: rgba(9, 158, 238, 0.657);
+  box-shadow: 10px 7px 6px rgb(60, 60, 60);
+  flex-direction: column;  
+  gap: 1vw;    
+}
+.book-container:hover{
+  background-color: rgb(49, 192, 109);
+}
+
+.thumbnail {
+  width: 18vw;
+  margin-right: 1vw;
+  height: 21vw;
+  border-radius: 1vw;
+  align-items: center;
+}
+
+.book-info {
+  flex-grow: 1;
+}
+li{
+  font-size: 1.5vw;
+}
+h3{
+  text-align: center;
+  display: none;
+}
+
