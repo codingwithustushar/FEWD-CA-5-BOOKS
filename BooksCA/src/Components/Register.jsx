@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import "../App.css"
 import { Link } from 'react-router-dom'
 
+//register form
 function Register() {
     const initState ={
         Name:'',
@@ -17,11 +18,12 @@ function Register() {
         RepeatPassword:''
         
     }
+    //declaring the alert and registration state
     const[regisState,setRegisState] = useState(initState);
     const[alert,setAlert] = useState(alertState)
 
    
-    
+    //event fot submission
     const handleSubmit = (e)=>{
         e.preventDefault();
     
@@ -31,7 +33,7 @@ function Register() {
         console.log(regisState)
 
         
-    
+    //messages if not filled
         if (!regisState.Name || !regisState.Email || !regisState.Password || !regisState.RepeatPassword) {
             setAlert({
                 ...alertState,
@@ -69,7 +71,7 @@ function Register() {
     }
     
 }
-
+//event for handlechange 
 const handleChange = (e) => {
     const { name, value } = e.target;
     setRegisState({
@@ -79,6 +81,7 @@ const handleChange = (e) => {
 };
 
 return (
+    //form container
           <div>
              <Link to ='/'><h1 className='logo'>Kalvium Books</h1></Link>
     <div className='Form'>

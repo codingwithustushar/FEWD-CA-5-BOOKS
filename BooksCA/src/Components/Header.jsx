@@ -6,6 +6,7 @@ const Header=()=> {
     let[books,setbooks] = useState([])
     let[searchTemrs,setSearchTerms] = useState('')
     let[sugges,setSugges] = useState([])
+    //fetching the api
     useEffect(()=>{
         axios.get("https://reactnd-books-api.udacity.com/books",{headers:{ 'Authorization': 'whatever-you-want' }}).then(res=>{setbooks(res.data.books)
     setSugges(res.data.books)}).catch(error=>{
@@ -19,7 +20,9 @@ const Header=()=> {
         
     }
   return (
+    //book container where all the books showed
     <div>
+    
          <div className='Navbar'>
         <h1>KALVIUM BOOKS</h1>
         <input  type='text' placeholder='🔎 Search Books'  className='search' onChange={handlechange} />
