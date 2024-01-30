@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap');
+
 *{
   margin: 0;
   padding: 0;
@@ -12,72 +14,129 @@
   justify-content: space-between;
   align-items: center;
   box-shadow: 2px 3px 5px black;
+  font-family: Poppins;
 }
 
 .search {
-  padding: 0.5rem;
-  font-size: 1.5vw;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-  margin-right: 6vw;
-  width: 40vw;
-  height: 1vw;
-  box-shadow: 2px 3px 5px rgb(156, 155, 155);
+  padding: 11px;
+border: none;
+border-radius: 5px;
+margin-left: -22px;
+width: 44vw;
+text-align: center;
+font-size: 1vw;
+font-family: Poppins;
+}
+
+.books-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  margin-top: -6px;
+  font-family: Poppins;
+  background-color: rgb(174, 189, 202);
+}
+
+.books {
+  width: 28vw;
+  border: 1.4px solid #ddd;
+  margin: 28px;
+  padding: 10px;
+  text-align: center;
+  border-radius: 2vw;
+  box-shadow: 1vw 1vw 1vw black;
+  background-color: rgba(148, 147, 147, 0.578);
+}
+
+.books img {
+  max-width: 100%;
+  height: 19vw;
 }
 
 .register {
-  color: white;
   text-decoration: none;
-  padding: 0.5rem 1rem;
-  background-color: #1ba3c8;
+  color: white;
+  padding: 8px 15px;
+  border: 1px solid #fff;
   border-radius: 5px;
-}
-.register:hover{
-  background-color: rgb(49, 192, 109);
+  background-color: #27ae60;
 }
 
-.book-list {
-  list-style-type: none;
-  padding: 59px;
+.register:hover {
+  background-color: #218c54;
+}
+.title{
+  font-size: 22px;
+  color: black;
+  
+}
+.rating{
+  font-family: Poppins;
+  color: black;
+  margin-right: 9vw;
+  margin-top: 1vw;
+  font-size: 1.4vw;
+}
+.free{
+  font-family: Poppins;
+  color: black;
+  margin-top: -2.1vw;
+  font-size: 1.4vw;
+}
+
+.logo{
+  background-color: #282c34;
+  color: white;
+  padding: 1rem;
   display: flex;
-  flex-wrap: wrap;
-  flex-direction: row;
-  gap: 7vw;
-  background-color: #bfc0c3;
-}
-
-.book-container {
-  border: 3px solid #7b7b7b;
-  border-radius: 5px;
-  margin: 16px;
-  padding: 10px;
-  display: flex;
-  flex-wrap: wrap;
-  background-color: rgba(9, 158, 238, 0.657);
-  box-shadow: 10px 7px 6px rgb(60, 60, 60);
-  flex-direction: column;  
-  gap: 1vw;    
-}
-.book-container:hover{
-  background-color: rgb(49, 192, 109);
-}
-
-.thumbnail {
-  width: 18vw;
-  margin-right: 1vw;
-  height: 21vw;
-  border-radius: 1vw;
+  justify-content: space-between;
   align-items: center;
+  box-shadow: 2px 3px 5px black;
+  font-family: Poppins;
+}
+.Form {
+  max-width: 500px;
+  margin-top: 7vw;
+  margin-left: 31vw;
+  padding: 20px;
+  border: 1px solid #ddddddc2;
+  border-radius: 5px;
+  box-shadow: 7px 10px 12px black;
+  font-family: Poppins;
 }
 
-.book-info {
-  flex-grow: 1;
+h2 {
+  text-align: center;
+  font-family: Poppins;
+  word-spacing: 3vw;
 }
-li{
+
+label {
+  display: block;
+  margin-bottom: 10px;
+  font-family: Poppins;
+}
+
+input {
+  padding: 18px;
+margin-bottom: 2px;
+border: 1px solid wheat;
+border-radius: 5px;
+box-shadow: 3px 3px 4px grey;
+width: 30vw;
+margin-top: 2vw;
+margin-left: 1vw;
+font-family: Poppins;
+font-size: 1.5vw;
+}
+
+input[type="submit"] {
+  background-color: #4caf50;
+  color: white;
+  cursor: pointer;
+  margin-left: 2.3vw;
   font-size: 1.5vw;
 }
-h3{
-  text-align: center;
-  display: none;
-}
+
+
 

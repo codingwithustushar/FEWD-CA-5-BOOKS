@@ -1,77 +1,53 @@
-import React, { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
-import '../App.css';
+import React, { useEffect,useState } from 'react'
+import { Link } from 'react-router-dom'
+import axios from 'axios'
 
-function Header() {
-  const [books, setBooks] = useState([]);
-  const [searchTerm, setSearchTerm] = useState('');
-  const [error, setError] = useState(null);
-
-  useEffect(() => {
-    const fetchBooks = async () => {
-      try {
-        const response = await fetch(`https://reactnd-books-api.udacity.com/books?q=${searchTerm}`, {
-          headers: { 'Authorization': 'whatever-you-want' },
-        });
-
-        if (!response.ok) {
-          throw new Error(`HTTP error! Status: ${response.status}`);
-        }
-
-        const result = await response.json();
-
-        setBooks(result.books);
-      } catch (error) {
-        setError(error.message);
-      }
-    };
-
-    if (searchTerm.trim() !== '') {
-      fetchBooks();
+const Header=()=> {
+    let[books,setbooks] = useState([])
+    let[searchTemrs,setSearchTerms] = useState('')
+    let[sugges,setSugges] = useState([])
+    useEffect(()=>{
+        axios.get("https://reactnd-books-api.udacity.com/books",{headers:{ 'Authorization': 'whatever-you-want' }}).then(res=>{setbooks(res.data.books)
+    setSugges(res.data.books)}).catch(error=>{
+            console.log(error)
+        })
+        
+    },[])
+    let handlechange =(e)=>{
+        setSearchTerms(e.target.value)
+        setSugges(books.filter((el)=>el.title.toLowerCase().includes(searchTemrs.toLowerCase())))
+        
     }
-  }, [searchTerm]);
-
   return (
     <div>
-      <div className='Navbar'>
+         <div className='Navbar'>
         <h1>KALVIUM BOOKS</h1>
-        <input
-          type='text'
-          placeholder='🔎 Search Books'
-          className='search'
-          value={searchTerm}
-          onChange={(e) => setSearchTerm(e.target.value)}
-          />
-        <Link to='/register' className='register'>
-          Register
-        </Link>
+        <input  type='text' placeholder='🔎 Search Books'  className='search' onChange={handlechange} />
+        <Link to='/register' className='register'>Register </Link>
       </div>
 
-      <div className='Books'>
-        {error && <p>Error: {error}</p>}
-        {books.length > 0 && (
-            <ul className="book-list">
-            {books.map((book) => (
-              <li key={book.id} className="book-container">
-                <img
-                  src={book.imageLinks.thumbnail} 
-                  alt={book.title}
-                  className='thumbnail'
-                />
-                <div className="book-info">
-                  <h3>{book.title}</h3>
-                  <p>{book.authors.join(', ')}</p>
-                  <p className='rate'>★{book.averageRating} Free</p>
-                  
-                </div>
-              </li>
-            ))}
-          </ul>
-        )}
-        {/* {books.length === 0 && !error && <p>No books found.</p>} */}
-      </div>
+      <div className='books-container'>
+                {sugges.map((book)=>(
+                    <div key={book.id} className='books'>
+                        <img src={book.imageLinks.smallThumbnail}/>
+                        <h3 className='title'>{book.title}</h3>
+                        <p className='rating'>⭐️ {book.averageRating}</p>
+                        <p className='free'>Free</p>
+                    </div>
+                ))}
+
+        </div>
     </div>
-  );
+  )
 }
 
-export default Header;
+export default Header
+      
+       
+          
+         
+        
+        
+         
+          
+       
